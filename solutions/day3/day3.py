@@ -1,7 +1,7 @@
 from string import ascii_letters
-text_file = open('input.txt')
-rucksacks = text_file.read().strip().split('\n')
-values = dict(zip(ascii_letters, range(1,53)))
+with open('input.txt') as text_file:
+  rucksacks = text_file.read().strip().split('\n')
+  values = dict(zip(ascii_letters, range(1,53)))
 
 def part_one():
   sum_priority = 0
