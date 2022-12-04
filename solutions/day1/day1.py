@@ -1,7 +1,7 @@
 with open('input.txt') as text_file:
   calorie_list = text_file.read().split('\n\n')
-  totals = []
-
+  totals = [] #Sorted list of sums
+  
   for cals in calorie_list:
     totals.append(sum(map(int,cals.strip().split('\n'))))
   totals.sort()
