@@ -1,12 +1,7 @@
-import string
+from string import ascii_letters
 text_file = open('input.txt')
 rucksacks = text_file.read().strip().split('\n')
-
-values = dict()
-for index, lower_case in enumerate(string.ascii_lowercase):
-  values[lower_case] = index + 1
-for index, upper_case in enumerate(string.ascii_uppercase):
-  values[upper_case] = index + 27
+values = dict(zip(ascii_letters, range(1,53)))
 
 def part_one():
   sum_priority = 0
