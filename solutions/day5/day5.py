@@ -2,7 +2,7 @@ from string import ascii_uppercase
 import copy
 
 def prep_cargo(cargo):
-  prepped_cargo = [ [] for _ in range(9) ]
+  prepped_cargo = [ [] for _ in range(int(cargo[-1].strip()[-1])) ]
   for row in cargo:
     for c in range(len(row)):
       if row[c] in ascii_uppercase:
