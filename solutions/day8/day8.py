@@ -20,15 +20,11 @@ def solve(forest, rlen, clen):
       right = list(map(int, forest[row][col+1:]))
       up = [int(c[col]) for c in forest[:row]]
       down = [int(c[col]) for c in forest[row+1:]]
-
       #Part 1
-      if row == 0 or col == 0 or row == rlen-1 or col == clen-1:
-        visible_count += 1
-      else:
-        if (all(n < int(forest[row][col]) for n in left) or
-            all(n < int(forest[row][col]) for n in right) or
-            all(n < int(forest[row][col]) for n in up) or
-            all(n < int(forest[row][col]) for n in down)): visible_count += 1  
+      if (all(n < int(forest[row][col]) for n in left) or
+          all(n < int(forest[row][col]) for n in right) or
+          all(n < int(forest[row][col]) for n in up) or
+          all(n < int(forest[row][col]) for n in down)): visible_count += 1
       #Part 2
       scores = [get_score(reversed(left), forest[row][col]),
                 get_score(right, forest[row][col]),
