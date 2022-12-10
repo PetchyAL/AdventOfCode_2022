@@ -8,13 +8,8 @@ sig_str = 0
 
 crt = [['.']*40 for i in range(6)]
 def check_crt(): #Update CRT each cycle
-  if cycle <= 40: limit, row = 1, 0
-  elif cycle <= 80: limit, row = 41, 1
-  elif cycle <= 120: limit, row = 81, 2
-  elif cycle <= 160: limit, row = 121, 3
-  elif cycle <= 200: limit, row = 161, 4
-  else: limit, row = 201, 5
-  col = cycle - limit
+  row = cycle // 40
+  col = (cycle % 40)-1
   sprite_pos = [rx-1, rx, rx+1]
   if col in sprite_pos: 
     crt[row][col] = '#'
